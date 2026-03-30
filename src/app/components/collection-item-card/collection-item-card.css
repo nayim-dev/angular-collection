@@ -1,0 +1,103 @@
+/* --- Le conteneur principal --- */
+.collection-item-card {
+  position: relative;
+  background-color: #f7f7f9; /* Gris très clair pour le fond de la carte */
+  border-radius: 20px;
+  width: 320px;
+  min-height: 400px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.collection-item-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Le badge (Rarity) --- */
+.rarity-chip {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #1e90ff; /* Bleu vif comme sur l'image */
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Zone de l'image --- */
+.item-image {
+  margin: 0;
+  padding: 40px 20px 0 20px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.item-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Optionnel : ajoute une ombre portée à l'objet lui-même */
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+}
+
+/* --- Zone de texte (Le rectangle blanc en bas) --- */
+.item-header, 
+.item-description, 
+footer {
+  background-color: white; /* Fond blanc pour tout le bas */
+  padding: 0 25px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Arrondir le haut de la zone blanche pour l'effet de superposition */
+.item-header {
+  padding-top: 25px;
+  margin-top: -20px; /* Remonte sur l'image */
+  border-radius: 25px 25px 0 0;
+}
+
+.item-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  /* Style serif pour le côté "antiquité/légendaire" */
+  font-family: 'Georgia', serif;
+}
+
+.item-description {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #7f8c8d;
+}
+
+footer {
+  padding-bottom: 25px;
+  border-radius: 0 0 20px 20px;
+}
+
+.item-price {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #27ae60; /* Vert pour le prix */
+}
